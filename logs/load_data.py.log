@@ -1,0 +1,8 @@
+2022-03-25 08:07:54,231 __main__ 28 [DEBUG][load_transaction_data] enter 
+2022-03-25 08:08:41,377 __main__ 30 [DEBUG][load_transaction_data] exit 
+2022-03-25 08:08:41,843 __main__ 34 [DEBUG][load_customer_data] enter 
+2022-03-25 08:08:45,590 __main__ 36 [DEBUG][load_customer_data] exit 
+2022-03-25 08:08:45,678 __main__ 40 [DEBUG][load_article_data] enter 
+2022-03-25 08:08:46,351 __main__ 42 [DEBUG][load_article_data] exit 
+2022-03-25 08:08:46,384 __main__ 46 [DEBUG][load_test_data] enter 
+2022-03-25 08:08:49,165 __main__ 48 [DEBUG][load_test_data] exit 
