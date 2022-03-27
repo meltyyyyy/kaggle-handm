@@ -1,6 +1,7 @@
 *~
 input/
-output/*
+output/
+.py.*
 *csv
 *pkl
 *feather
