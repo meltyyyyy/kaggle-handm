@@ -1,4 +1,8 @@
-2022-03-25 09:53:11,967 utils.load_data 28 [DEBUG][load_transaction_data] enter 
-2022-03-25 09:53:52,758 utils.load_data 30 [DEBUG][load_transaction_data] exit 
-2022-03-25 11:14:24,561 utils.load_data 46 [DEBUG][load_test_data] enter 
-2022-03-25 11:14:28,657 utils.load_data 48 [DEBUG][load_test_data] exit 
+2022-03-27 16:28:27,570 utils.load_data 28 [DEBUG][load_transaction_data] enter 
+2022-03-27 16:29:14,358 utils.load_data 30 [DEBUG][load_transaction_data] exit 
+2022-03-27 16:29:14,358 utils.load_data 46 [DEBUG][load_test_data] enter 
+2022-03-27 16:29:17,051 utils.load_data 48 [DEBUG][load_test_data] exit 
+2022-03-27 16:29:17,052 utils.load_data 34 [DEBUG][load_customer_data] enter 
+2022-03-27 16:29:20,748 utils.load_data 36 [DEBUG][load_customer_data] exit 
+2022-03-27 16:29:20,749 utils.load_data 40 [DEBUG][load_article_data] enter 
+2022-03-27 16:29:21,488 utils.load_data 42 [DEBUG][load_article_data] exit 

@@ -1,8 +1,8 @@
-2022-03-25 09:53:11,967 __main__ 22 [INFO][<module>] start
-2022-03-25 09:53:11,967 __main__ 24 [INFO][<module>] start loading
-2022-03-25 09:53:52,758 __main__ 26 [INFO][<module>] finish loading
-2022-03-25 09:53:52,758 __main__ 27 [INFO][<module>] data shape: (31788324, 5)
-2022-03-25 09:53:52,767 __main__ 28 [INFO][<module>] data sample: 
+2022-03-27 14:43:51,461 __main__ 22 [INFO][<module>] start
+2022-03-27 14:43:51,461 __main__ 24 [INFO][<module>] start loading
+2022-03-27 14:44:29,091 __main__ 26 [INFO][<module>] finish loading
+2022-03-27 14:44:29,092 __main__ 27 [INFO][<module>] data shape: (31788324, 5)
+2022-03-27 14:44:29,106 __main__ 28 [INFO][<module>] data sample: 
         t_dat  ... sales_channel_id
 0  2018-09-20  ...                2
 1  2018-09-20  ...                2
@@ -11,8 +11,8 @@
 4  2018-09-20  ...                2
 
 [5 rows x 5 columns]
-2022-03-25 09:53:52,767 __main__ 30 [INFO][<module>] arrange data
-2022-03-25 10:49:30,509 __main__ 58 [INFO][<module>] arranged data: 
+2022-03-27 14:44:29,106 __main__ 30 [INFO][<module>] arrange data
+2022-03-27 15:41:24,573 __main__ 58 [INFO][<module>] arranged data: 
               t_dat  ... quotient
 0        2018-09-20  ...      0.0
 1        2018-09-20  ...      0.0
@@ -27,4 +27,4 @@
 31788323 2020-09-22  ...      1.0
 
 [31788324 rows x 7 columns]
-2022-03-25 10:49:30,509 __main__ 60 [INFO][<module>] Fill purchase dictionary
+2022-03-27 15:41:24,573 __main__ 60 [INFO][<module>] Fill purchase dictionary
