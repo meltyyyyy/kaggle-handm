@@ -35,23 +35,30 @@ logger.info('train data: \n{}'.format(df.head()))
 logger.info('test data: \n{}'.format(test_df.head()))
 
 
+# arrange data
 active_articles = df.groupby("article_id")["t_dat"].max().reset_index()
 active_articles = active_articles[active_articles["t_dat"]
                                   >= "2019-09-01"].reset_index()
 df = df[df["article_id"].isin(
     active_articles["article_id"])].reset_index(drop=True)
 df["week"] = (df["t_dat"].max() - df["t_dat"]).dt.days
-
-
 article_ids = np.concatenate(
     [["placeholder"], np.unique(df["article_id"].values)])
-
 le_article = LabelEncoder()
 le_article.fit(article_ids)
 df["article_id"] = le_article.transform(df["article_id"])
 
 
 def create_dataset(df, week):
+    """create_dataset
+
+    Args:
+        df (DataFrame): _description_
+        week (_type_): _description_
+
+    Returns:
+        DataFrame: _description_
+    """
     hist_df = df[(df["week"] > week) & (df["week"] <= week + WEEK_HIST_MAX)]
     hist_df = hist_df.groupby("customer_id").agg(
         {"article_id": list, "week": list}).reset_index()
@@ -103,8 +110,7 @@ class HMDataset(Dataset):
                 week_hist = (torch.LongTensor(
                     row.week_history[-self.seq_len:]) - row.week) / WEEK_HIST_MAX / 2
             else:
-                article_hist[-len(row.article_id)
-                                  :] = torch.LongTensor(row.article_id)
+                article_hist[-len(row.article_id):] = torch.LongTensor(row.article_id)
                 week_hist[-len(row.article_id):] = (torch.LongTensor(
                     row.week_history) - row.week) / WEEK_HIST_MAX / 2
 
@@ -170,9 +176,7 @@ class HMModel(nn.Module):
 
         x = torch.cat([x.unsqueeze(1),
                        max_week,
-                       self.article_likelihood[None,
-                                               None,
-                                               :].repeat(x.shape[0],
+                       self.article_likelihood[None, None, :].repeat(x.shape[0],
                                                          1,
                                                          1)],
                       axis=1)
@@ -287,13 +291,7 @@ def train(model, train_loader, val_loader, epochs):
 
         val_map = validate(model, val_loader)
 
-        log_text = f"Epoch {e+1}\nTrain Loss: {avg_loss}\nValidation MAP: {val_map}\n"
-
-        print(log_text)
-
-        # logfile = open(f"models/{MODEL_NAME}_{SEED}.txt", 'a')
-        # logfile.write(log_text)
-        # logfile.close()
+        logger.info(f"Epoch {e+1}\nTrain Loss: {avg_loss}\nValidation MAP: {val_map}\n")
     return model
 
 

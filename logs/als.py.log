@@ -1,67 +1,67 @@
-2022-03-27 16:28:27,569 __main__ 22 [INFO][<module>] start
-2022-03-27 16:28:27,570 __main__ 24 [INFO][<module>] start loading
-2022-03-27 16:29:21,488 __main__ 29 [INFO][<module>] finish loading
-2022-03-27 16:29:21,488 __main__ 30 [INFO][<module>] transaction data shape: (31788324, 5)
-2022-03-27 16:29:21,488 __main__ 31 [INFO][<module>] submission data shape: (1371980, 2)
-2022-03-27 16:29:21,488 __main__ 32 [INFO][<module>] customer data shape: (1371980, 7)
-2022-03-27 16:29:21,488 __main__ 33 [INFO][<module>] article data shape: (105542, 25)
-2022-03-27 16:29:21,488 __main__ 35 [INFO][<module>] arrange data
-2022-03-27 16:29:42,213 __main__ 41 [INFO][<module>] reduced transaction data shape: (1190911, 5)
-2022-03-27 16:29:42,213 __main__ 43 [INFO][<module>] assign ids to customers and articles
-2022-03-27 16:29:45,172 __main__ 57 [INFO][<module>] create coo-matrix and csr-matrix
-2022-03-27 16:29:49,655 __main__ 98 [INFO][validate] Factors:  40 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00392
-2022-03-27 16:29:49,656 __main__ 112 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 40, 'iterations': 3, 'regularization': 0.01}
-2022-03-27 16:29:56,109 __main__ 98 [INFO][validate] Factors:  40 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00533
-2022-03-27 16:29:56,110 __main__ 112 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 40, 'iterations': 12, 'regularization': 0.01}
-2022-03-27 16:30:03,125 __main__ 98 [INFO][validate] Factors:  40 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00523
-2022-03-27 16:30:10,366 __main__ 98 [INFO][validate] Factors:  40 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00528
-2022-03-27 16:30:18,799 __main__ 98 [INFO][validate] Factors:  40 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00532
-2022-03-27 16:30:23,375 __main__ 98 [INFO][validate] Factors:  50 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00461
-2022-03-27 16:30:30,603 __main__ 98 [INFO][validate] Factors:  50 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00543
-2022-03-27 16:30:30,605 __main__ 112 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 50, 'iterations': 12, 'regularization': 0.01}
-2022-03-27 16:30:38,453 __main__ 98 [INFO][validate] Factors:  50 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00535
-2022-03-27 16:30:46,449 __main__ 98 [INFO][validate] Factors:  50 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00534
-2022-03-27 16:30:56,077 __main__ 98 [INFO][validate] Factors:  50 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00528
-2022-03-27 16:31:01,062 __main__ 98 [INFO][validate] Factors:  60 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00454
-2022-03-27 16:31:08,857 __main__ 98 [INFO][validate] Factors:  60 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00575
-2022-03-27 16:31:08,858 __main__ 112 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 60, 'iterations': 12, 'regularization': 0.01}
-2022-03-27 16:31:17,386 __main__ 98 [INFO][validate] Factors:  60 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00577
-2022-03-27 16:31:17,386 __main__ 112 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 60, 'iterations': 14, 'regularization': 0.01}
-2022-03-27 16:31:26,320 __main__ 98 [INFO][validate] Factors:  60 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00576
-2022-03-27 16:31:36,843 __main__ 98 [INFO][validate] Factors:  60 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00578
-2022-03-27 16:31:36,843 __main__ 112 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 60, 'iterations': 20, 'regularization': 0.01}
-2022-03-27 16:31:43,172 __main__ 98 [INFO][validate] Factors: 100 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00536
-2022-03-27 16:31:54,292 __main__ 98 [INFO][validate] Factors: 100 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00620
-2022-03-27 16:31:54,292 __main__ 112 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 100, 'iterations': 12, 'regularization': 0.01}
-2022-03-27 16:32:06,418 __main__ 98 [INFO][validate] Factors: 100 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00626
-2022-03-27 16:32:06,418 __main__ 112 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 100, 'iterations': 14, 'regularization': 0.01}
-2022-03-27 16:32:19,018 __main__ 98 [INFO][validate] Factors: 100 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00621
-2022-03-27 16:32:34,283 __main__ 98 [INFO][validate] Factors: 100 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00622
-2022-03-27 16:32:47,530 __main__ 98 [INFO][validate] Factors: 200 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00650
-2022-03-27 16:32:47,538 __main__ 112 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 200, 'iterations': 3, 'regularization': 0.01}
-2022-03-27 16:33:16,717 __main__ 98 [INFO][validate] Factors: 200 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00648
-2022-03-27 16:33:41,067 __main__ 98 [INFO][validate] Factors: 200 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00643
-2022-03-27 16:34:04,709 __main__ 98 [INFO][validate] Factors: 200 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00641
-2022-03-27 16:34:33,996 __main__ 98 [INFO][validate] Factors: 200 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00639
-2022-03-27 16:35:11,271 __main__ 98 [INFO][validate] Factors: 500 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00695
-2022-03-27 16:35:11,279 __main__ 112 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 500, 'iterations': 3, 'regularization': 0.01}
-2022-03-27 16:36:35,257 __main__ 98 [INFO][validate] Factors: 500 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00608
-2022-03-27 16:38:08,949 __main__ 98 [INFO][validate] Factors: 500 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00591
-2022-03-27 16:39:50,014 __main__ 98 [INFO][validate] Factors: 500 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00589
-2022-03-27 16:41:59,009 __main__ 98 [INFO][validate] Factors: 500 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00583
-2022-03-27 16:43:49,237 __main__ 98 [INFO][validate] Factors: 1000 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00695
-2022-03-27 16:49:19,470 __main__ 98 [INFO][validate] Factors: 1000 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00622
-2022-03-27 16:55:35,183 __main__ 98 [INFO][validate] Factors: 1000 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00612
-2022-03-27 17:02:13,959 __main__ 98 [INFO][validate] Factors: 1000 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00612
-2022-03-27 17:10:50,926 __main__ 98 [INFO][validate] Factors: 1000 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00601
-2022-03-27 17:10:51,053 __main__ 130 [INFO][<module>] best params:{'factors': 500, 'iterations': 3, 'regularization': 0.01}
-2022-03-27 17:24:09,829 __main__ 149 [INFO][submit] df_preds:
+2022-04-05 23:44:22,090 __main__ 21 [INFO][<module>] start
+2022-04-05 23:44:22,091 __main__ 23 [INFO][<module>] start loading
+2022-04-05 23:45:10,850 __main__ 28 [INFO][<module>] finish loading
+2022-04-05 23:45:10,850 __main__ 29 [INFO][<module>] transaction data shape: (31788324, 5)
+2022-04-05 23:45:10,850 __main__ 30 [INFO][<module>] submission data shape: (1371980, 2)
+2022-04-05 23:45:10,850 __main__ 31 [INFO][<module>] customer data shape: (1371980, 7)
+2022-04-05 23:45:10,850 __main__ 32 [INFO][<module>] article data shape: (105542, 25)
+2022-04-05 23:45:10,850 __main__ 34 [INFO][<module>] arrange data
+2022-04-05 23:45:32,179 __main__ 40 [INFO][<module>] reduced transaction data shape: (1190911, 5)
+2022-04-05 23:45:32,179 __main__ 42 [INFO][<module>] assign ids to customers and articles
+2022-04-05 23:45:35,255 __main__ 56 [INFO][<module>] create coo-matrix and csr-matrix
+2022-04-05 23:45:40,232 __main__ 116 [INFO][validate] Factors:  40 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00392
+2022-04-05 23:45:40,233 __main__ 139 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 40, 'iterations': 3, 'regularization': 0.01}
+2022-04-05 23:45:47,549 __main__ 116 [INFO][validate] Factors:  40 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00533
+2022-04-05 23:45:47,550 __main__ 139 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 40, 'iterations': 12, 'regularization': 0.01}
+2022-04-05 23:45:55,032 __main__ 116 [INFO][validate] Factors:  40 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00523
+2022-04-05 23:46:03,035 __main__ 116 [INFO][validate] Factors:  40 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00528
+2022-04-05 23:46:12,222 __main__ 116 [INFO][validate] Factors:  40 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00532
+2022-04-05 23:46:17,263 __main__ 116 [INFO][validate] Factors:  50 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00461
+2022-04-05 23:46:24,966 __main__ 116 [INFO][validate] Factors:  50 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00543
+2022-04-05 23:46:24,967 __main__ 139 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 50, 'iterations': 12, 'regularization': 0.01}
+2022-04-05 23:46:33,476 __main__ 116 [INFO][validate] Factors:  50 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00535
+2022-04-05 23:46:42,190 __main__ 116 [INFO][validate] Factors:  50 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00534
+2022-04-05 23:46:52,485 __main__ 116 [INFO][validate] Factors:  50 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00528
+2022-04-05 23:46:58,115 __main__ 116 [INFO][validate] Factors:  60 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00454
+2022-04-05 23:47:06,846 __main__ 116 [INFO][validate] Factors:  60 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00575
+2022-04-05 23:47:06,846 __main__ 139 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 60, 'iterations': 12, 'regularization': 0.01}
+2022-04-05 23:47:16,360 __main__ 116 [INFO][validate] Factors:  60 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00577
+2022-04-05 23:47:16,360 __main__ 139 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 60, 'iterations': 14, 'regularization': 0.01}
+2022-04-05 23:47:25,989 __main__ 116 [INFO][validate] Factors:  60 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00576
+2022-04-05 23:47:37,268 __main__ 116 [INFO][validate] Factors:  60 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00578
+2022-04-05 23:47:37,268 __main__ 139 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 60, 'iterations': 20, 'regularization': 0.01}
+2022-04-05 23:47:44,073 __main__ 116 [INFO][validate] Factors: 100 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00536
+2022-04-05 23:47:55,903 __main__ 116 [INFO][validate] Factors: 100 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00620
+2022-04-05 23:47:55,903 __main__ 139 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 100, 'iterations': 12, 'regularization': 0.01}
+2022-04-05 23:48:08,839 __main__ 116 [INFO][validate] Factors: 100 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00626
+2022-04-05 23:48:08,839 __main__ 139 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 100, 'iterations': 14, 'regularization': 0.01}
+2022-04-05 23:48:22,114 __main__ 116 [INFO][validate] Factors: 100 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00621
+2022-04-05 23:48:38,323 __main__ 116 [INFO][validate] Factors: 100 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00622
+2022-04-05 23:48:49,808 __main__ 116 [INFO][validate] Factors: 200 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00650
+2022-04-05 23:48:49,811 __main__ 139 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 200, 'iterations': 3, 'regularization': 0.01}
+2022-04-05 23:49:12,762 __main__ 116 [INFO][validate] Factors: 200 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00648
+2022-04-05 23:49:38,097 __main__ 116 [INFO][validate] Factors: 200 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00643
+2022-04-05 23:50:04,545 __main__ 116 [INFO][validate] Factors: 200 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00641
+2022-04-05 23:50:37,118 __main__ 116 [INFO][validate] Factors: 200 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00639
+2022-04-05 23:51:15,637 __main__ 116 [INFO][validate] Factors: 500 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00695
+2022-04-05 23:51:15,647 __main__ 139 [INFO][<module>] Best MAP@12 found. Updating: {'factors': 500, 'iterations': 3, 'regularization': 0.01}
+2022-04-05 23:53:13,378 __main__ 116 [INFO][validate] Factors: 500 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00608
+2022-04-05 23:55:16,657 __main__ 116 [INFO][validate] Factors: 500 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00591
+2022-04-05 23:57:42,269 __main__ 116 [INFO][validate] Factors: 500 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00589
+2022-04-06 00:00:23,182 __main__ 116 [INFO][validate] Factors: 500 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00583
+2022-04-06 00:02:20,351 __main__ 116 [INFO][validate] Factors: 1000 - Iterations:  3 - Regularization: 0.010 ==> MAP@12: 0.00695
+2022-04-06 00:08:09,189 __main__ 116 [INFO][validate] Factors: 1000 - Iterations: 12 - Regularization: 0.010 ==> MAP@12: 0.00622
+2022-04-06 00:15:39,073 __main__ 116 [INFO][validate] Factors: 1000 - Iterations: 14 - Regularization: 0.010 ==> MAP@12: 0.00612
+2022-04-06 00:22:46,281 __main__ 116 [INFO][validate] Factors: 1000 - Iterations: 15 - Regularization: 0.010 ==> MAP@12: 0.00612
+2022-04-06 00:32:18,808 __main__ 116 [INFO][validate] Factors: 1000 - Iterations: 20 - Regularization: 0.010 ==> MAP@12: 0.00601
+2022-04-06 00:32:18,957 __main__ 164 [INFO][<module>] best params:{'factors': 500, 'iterations': 3, 'regularization': 0.01}
+2022-04-06 00:46:23,457 __main__ 189 [INFO][submit] df_preds:
                                          customer_id                                         prediction
 0  00000dbacae5abe5e23885899a1fa44253a17956c6d1c3...  568601043 858856005 779781015 399256001 868823...
 1  0000423b00ade91418cceaf3b26c6af3dd342b51fd051e...  112679048 111609001 111593001 111586001 111565...
 2  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...  794321007 794321011 805000007 706016062 614854...
 3  00005ca1c9ed5f5146b52ac8639a40ca9d57aeff4d1bd2...  112679048 111609001 111593001 111586001 111565...
 4  00006413d8573cd20ed7128e53b7b13819fe5cfc2d801f...  112679048 111609001 111593001 111586001 111565...
-2022-03-27 17:24:09,829 __main__ 150 [INFO][submit] df_preds:
+2022-04-06 00:46:23,457 __main__ 190 [INFO][submit] df_preds:
 (1371980, 2)
-2022-03-27 17:24:09,909 __main__ 156 [INFO][<module>] end
+2022-04-06 00:46:23,535 __main__ 197 [INFO][<module>] end
