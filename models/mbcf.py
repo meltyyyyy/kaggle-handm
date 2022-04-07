@@ -1,6 +1,6 @@
-from utils.load_data import read_csv
 from logging import getLogger, Formatter, FileHandler
 import logging
+import pandas as pd
 
 LOG_DIR = '../logs/'
 RATE_DATA = '../data/input/ml-1m/ratings.csv'
@@ -17,9 +17,9 @@ logger.setLevel(logging.DEBUG)
 logger.addHandler(handler)
 
 logger.info('start')
-rate_df = read_csv(RATE_DATA)
-user_df = read_csv(USER_DATA)
-movie_df = read_csv(MOVIE_DATA)
+rate_df = pd.read_csv(RATE_DATA, sep='\t', encoding='latin-1', usecols=['user_id', 'movie_id', 'rating'])
+user_df = pd.read_csv(USER_DATA, sep='\t', encoding='latin-1', usecols=['user_id', 'gender', 'zipcode', 'age_desc', 'occ_desc'])
+movie_df = pd.read_csv(MOVIE_DATA, sep='\t', encoding='latin-1', usecols=['movie_id', 'title', 'genres'])
 logger.info('rate_df shape: {}'.format(rate_df.shape))
 logger.info('rate_df data samlple: \n{}'.format(rate_df.head()))
 logger.info('user_df shape: {}'.format(user_df.shape))
