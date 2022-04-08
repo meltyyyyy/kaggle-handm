@@ -20,9 +20,9 @@ logger.setLevel('DEBUG')
 logger.addHandler(handler)
 
 
-def read_csv(path):
+def read_csv(path,encoding='utf-8'):
     logger.debug('enter')
-    df = pd.read_csv(path)
+    df = pd.read_csv(path, encoding=encoding)
     logger.debug('exit')
     return df
 

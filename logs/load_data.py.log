@@ -1,1 +1,5 @@
-2022-04-07 01:55:52,132 utils.load_data 24 [DEBUG][read_csv] enter 
+2022-04-07 02:50:03,578 utils.load_data 24 [DEBUG][read_csv] enter 
+2022-04-07 02:50:04,963 utils.load_data 26 [DEBUG][read_csv] exit 
+2022-04-07 02:50:04,964 utils.load_data 24 [DEBUG][read_csv] enter 
+2022-04-07 02:50:04,973 utils.load_data 26 [DEBUG][read_csv] exit 
+2022-04-07 02:50:04,973 utils.load_data 24 [DEBUG][read_csv] enter 
