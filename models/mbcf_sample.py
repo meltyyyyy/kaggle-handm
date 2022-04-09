@@ -11,7 +11,7 @@ MOVIE_DATA = '../data/input/ml-1m/movies.csv'
 logger = getLogger(__name__)
 log_fmt = Formatter('%(asctime)s %(name)s %(lineno)d [%(levelname)s][%(funcName)s] %(message)s')
 
-handler = FileHandler(LOG_DIR + 'mbcf.py.log', mode='w')
+handler = FileHandler(LOG_DIR + 'mbcf_sample.py.log', mode='w')
 handler.setLevel(logging.DEBUG)
 handler.setFormatter(log_fmt)
 logger.setLevel(logging.DEBUG)
