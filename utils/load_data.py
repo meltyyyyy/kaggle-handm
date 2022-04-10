@@ -3,9 +3,9 @@ import pandas as pd
 from logging import Formatter, FileHandler, getLogger
 
 LOG_DIR = '../logs/'
-TRANSACTION_DATA = '~/handm/data/input/transactions_train.csv'
+TRANSACTION_DATA = '~/handm/data/input/transactions_train.feather'
 CUSTOMER_DATA = '~/handm/data/input/customers.csv'
-ARTICLE_DATA = '~/handm/data/input/articles.csv'
+ARTICLE_DATA = '~/handm/data/input/articles.feather'
 TEST_DATA = '~/handm/data/input/test.csv'
 
 
@@ -20,7 +20,7 @@ logger.setLevel('DEBUG')
 logger.addHandler(handler)
 
 
-def read_csv(path,encoding='utf-8'):
+def read_csv(path, encoding='utf-8'):
     logger.debug('enter')
     df = pd.read_csv(path, encoding=encoding)
     logger.debug('exit')
@@ -29,7 +29,7 @@ def read_csv(path,encoding='utf-8'):
 
 def load_transaction_data():
     logger.debug('enter')
-    df = pd.read_csv(TRANSACTION_DATA)
+    df = pd.read_feather(TRANSACTION_DATA)
     logger.debug('exit')
     return df
 
@@ -43,7 +43,7 @@ def load_customer_data():
 
 def load_article_data():
     logger.debug('enter')
-    df = pd.read_csv(ARTICLE_DATA)
+    df = pd.read_feather(ARTICLE_DATA)
     logger.debug('exit')
     return df
 

@@ -1,8 +1,8 @@
 import pandas as pd
 
 target = [
-    'train',
-    'test',
+    'transactions_train',
+    'articles',
 ]
 
 extension = 'csv'
