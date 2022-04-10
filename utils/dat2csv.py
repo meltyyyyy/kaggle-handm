@@ -9,6 +9,6 @@ target = [
 extension = 'dat'
 
 for t in target:
-    df = pd.read_csv('./data/input/' + t + '.' + extension, encoding="utf-8")
+    df = pd.read_csv('./data/input/' + t + '.' + extension, sep='\t', encoding="latin-1")
     print(df.head())
     df.to_csv('./data/input/' + t + '.csv')
