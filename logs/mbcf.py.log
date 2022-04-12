@@ -1,19 +1,31 @@
-2022-04-10 02:18:54,243 __main__ 16 [INFO][<module>] start
-2022-04-10 02:19:03,703 __main__ 18 [INFO][<module>] tran_df shape: (31788324, 5)
-2022-04-10 02:19:03,712 __main__ 19 [INFO][<module>] tran_df sample: 
-        t_dat                                        customer_id  article_id     price  sales_channel_id
-0  2018-09-20  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...   663713001  0.050831                 2
-1  2018-09-20  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...   541518023  0.030492                 2
-2  2018-09-20  00007d2de826758b65a93dd24ce629ed66842531df6699...   505221004  0.015237                 2
-3  2018-09-20  00007d2de826758b65a93dd24ce629ed66842531df6699...   685687003  0.016932                 2
-4  2018-09-20  00007d2de826758b65a93dd24ce629ed66842531df6699...   685687004  0.016932                 2
-2022-04-10 02:19:03,813 __main__ 21 [INFO][<module>] tran_df shape: (105542, 25)
-2022-04-10 02:19:03,847 __main__ 22 [INFO][<module>] tran_df sample: 
-   article_id  product_code          prod_name  ...  garment_group_no garment_group_name                                        detail_desc
-0   108775015        108775          Strap top  ...              1002       Jersey Basic            Jersey top with narrow shoulder straps.
-1   108775044        108775          Strap top  ...              1002       Jersey Basic            Jersey top with narrow shoulder straps.
-2   108775051        108775      Strap top (1)  ...              1002       Jersey Basic            Jersey top with narrow shoulder straps.
-3   110065001        110065  OP T-shirt (Idro)  ...              1017  Under-, Nightwear  Microfibre T-shirt bra with underwired, moulde...
-4   110065002        110065  OP T-shirt (Idro)  ...              1017  Under-, Nightwear  Microfibre T-shirt bra with underwired, moulde...
+2022-04-12 04:42:08,351 __main__ 19 [INFO][<module>] start
+2022-04-12 04:42:16,809 __main__ 21 [INFO][<module>] tran_df shape: (31788324, 5)
+2022-04-12 04:42:16,820 __main__ 22 [INFO][<module>] tran_df sample: 
+        t_dat  ... sales_channel_id
+0  2018-09-20  ...                2
+1  2018-09-20  ...                2
+2  2018-09-20  ...                2
+3  2018-09-20  ...                2
+4  2018-09-20  ...                2
+
+[5 rows x 5 columns]
+2022-04-12 04:42:16,930 __main__ 24 [INFO][<module>] tran_df shape: (105542, 25)
+2022-04-12 04:42:16,952 __main__ 25 [INFO][<module>] tran_df sample: 
+   article_id  ...                                        detail_desc
+0   108775015  ...            Jersey top with narrow shoulder straps.
+1   108775044  ...            Jersey top with narrow shoulder straps.
+2   108775051  ...            Jersey top with narrow shoulder straps.
+3   110065001  ...  Microfibre T-shirt bra with underwired, moulde...
+4   110065002  ...  Microfibre T-shirt bra with underwired, moulde...
 
 [5 rows x 25 columns]
+2022-04-12 04:42:22,280 __main__ 30 [INFO][<module>] arranged tran_df shape: (1190911, 5)
+2022-04-12 04:42:22,289 __main__ 31 [INFO][<module>] arranged tran_df sample: 
+              t_dat  ... sales_channel_id
+30597413 2020-08-22  ...                2
+30597414 2020-08-22  ...                2
+30597415 2020-08-22  ...                2
+30597416 2020-08-22  ...                2
+30597417 2020-08-22  ...                2
+
+[5 rows x 5 columns]
