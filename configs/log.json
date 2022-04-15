@@ -18,7 +18,8 @@
             "class": "logging.FileHandler",
             "level": "INFO",
             "formatter": "normal",
-            "filename": "to be replaced"
+            "filename": "to be replaced",
+            "mode": "w"
         }
     },
 

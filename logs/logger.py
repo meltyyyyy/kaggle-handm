@@ -1,4 +1,6 @@
+import json
 
-LOG_CONFIG = '../configs/log.json'
+LOG_CONF = '../configs/log.json'
 
-
+def setLogger(log_file):
+    log_
