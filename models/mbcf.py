@@ -2,7 +2,7 @@ import logging
 from logging import getLogger, FileHandler, Formatter
 
 import pandas as pd
-from sqlalchemy import column
+
 from configs.mbcf import START_DATE
 from utils.load_data import load_transaction_data, load_article_data
 
