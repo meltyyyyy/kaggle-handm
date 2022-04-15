@@ -1,1 +1,109 @@
-2022-04-14 00:33:37,200 __main__ 19 [INFO][<module>] start
+2022-04-15 03:29:24,974 __main__ 21 [INFO][<module>] start
+2022-04-15 03:29:40,996 __main__ 24 [INFO][<module>] tran_df shape: (31788324, 5)
+2022-04-15 03:29:41,006 __main__ 25 [INFO][<module>] tran_df sample: 
+        t_dat                                        customer_id  article_id     price  sales_channel_id
+0  2018-09-20  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...   663713001  0.050831                 2
+1  2018-09-20  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...   541518023  0.030492                 2
+2  2018-09-20  00007d2de826758b65a93dd24ce629ed66842531df6699...   505221004  0.015237                 2
+3  2018-09-20  00007d2de826758b65a93dd24ce629ed66842531df6699...   685687003  0.016932                 2
+4  2018-09-20  00007d2de826758b65a93dd24ce629ed66842531df6699...   685687004  0.016932                 2
+2022-04-15 03:29:41,006 __main__ 26 [INFO][<module>] tran_df keys: 
+Empty DataFrame
+Columns: [t_dat, customer_id, article_id, price, sales_channel_id]
+Index: []
+2022-04-15 03:29:41,182 __main__ 29 [INFO][<module>] arti_df shape: (105542, 25)
+2022-04-15 03:29:41,210 __main__ 30 [INFO][<module>] arti_df sample: 
+   article_id  product_code  ... garment_group_name                                        detail_desc
+0   108775015        108775  ...       Jersey Basic            Jersey top with narrow shoulder straps.
+1   108775044        108775  ...       Jersey Basic            Jersey top with narrow shoulder straps.
+2   108775051        108775  ...       Jersey Basic            Jersey top with narrow shoulder straps.
+3   110065001        110065  ...  Under-, Nightwear  Microfibre T-shirt bra with underwired, moulde...
+4   110065002        110065  ...  Under-, Nightwear  Microfibre T-shirt bra with underwired, moulde...
+
+[5 rows x 25 columns]
+2022-04-15 03:29:41,210 __main__ 31 [INFO][<module>] arti_df keys: 
+Empty DataFrame
+Columns: [article_id, product_code, prod_name, product_type_no, product_type_name, product_group_name, graphical_appearance_no, graphical_appearance_name, colour_group_code, colour_group_name, perceived_colour_value_id, perceived_colour_value_name, perceived_colour_master_id, perceived_colour_master_name, department_no, department_name, index_code, index_name, index_group_no, index_group_name, section_no, section_name, garment_group_no, garment_group_name, detail_desc]
+Index: []
+2022-04-15 03:29:46,599 __main__ 36 [INFO][<module>] arranged tran_df shape: (1190911, 5)
+2022-04-15 03:29:46,606 __main__ 37 [INFO][<module>] arranged tran_df sample: 
+              t_dat                                        customer_id  article_id     price  sales_channel_id
+30597413 2020-08-22  0001d44dbe7f6c4b35200abdb052c77a87596fe1bdcc37...   913688003  0.033881                 2
+30597414 2020-08-22  0001d44dbe7f6c4b35200abdb052c77a87596fe1bdcc37...   913688003  0.033881                 2
+30597415 2020-08-22  0001d44dbe7f6c4b35200abdb052c77a87596fe1bdcc37...   923460001  0.042356                 2
+30597416 2020-08-22  0001d44dbe7f6c4b35200abdb052c77a87596fe1bdcc37...   934380001  0.050831                 2
+30597417 2020-08-22  0001d44dbe7f6c4b35200abdb052c77a87596fe1bdcc37...   913688001  0.033881                 2
+2022-04-15 03:29:47,496 __main__ 45 [INFO][<module>] selected tran_df: 
+          customer_id  article_id
+30597413  -1635734892   913688003
+30597414  -1635734892   913688003
+30597415  -1635734892   923460001
+30597416  -1635734892   934380001
+30597417  -1635734892   913688001
+2022-04-15 03:29:47,507 __main__ 48 [INFO][<module>] selected arti_df: 
+   article_id  product_type_no
+0   108775015              253
+1   108775044              253
+2   108775051              253
+3   110065001              306
+4   110065002              306
+2022-04-15 03:29:47,631 __main__ 51 [DEBUG][<module>] customer product matrix: 
+   customer_id  article_id  product_type_no
+0  -1635734892   913688003              258
+1  -1635734892   913688003              258
+2  -1029169340   913688003              258
+3   -954362593   913688003              258
+4   -604405703   913688003              258
+2022-04-15 03:29:47,634 __main__ 52 [DEBUG][<module>] check if article_id contains Nan: 
+Empty DataFrame
+Columns: [customer_id, article_id, product_type_no]
+Index: []
+2022-04-15 03:29:47,636 __main__ 53 [DEBUG][<module>] check if customer_id contains Nan: 
+Empty DataFrame
+Columns: [customer_id, article_id, product_type_no]
+Index: []
+2022-04-15 03:29:48,082 __main__ 58 [INFO][<module>] customer product matrix: 
+        customer_id  product_type_no  count
+0       -2147465265              245      1
+1       -2147465265              252      1
+2       -2147465265              254      1
+3       -2147465265              258      1
+4       -2147465265              272      5
+...             ...              ...    ...
+707628   2147449857              262      1
+707629   2147449857              306      4
+707630   2147473635              257      1
+707631   2147473635              270      2
+707632   2147473635              304      3
+
+[707633 rows x 3 columns]
+2022-04-15 03:29:48,334 __main__ 59 [INFO][<module>] check if customer_id duplicates: 
+customer_id  product_type_no  count
+-2147465265  245              1        1
+ 713443116   272              2        1
+ 713398909   252              2        1
+             272              1        1
+ 713417209   87               2        1
+                                      ..
+-715044143   252              2        1
+             258              1        1
+             259              2        1
+             272              6        1
+ 2147473635  304              3        1
+Length: 707633, dtype: int64
+2022-04-15 03:29:49,760 __main__ 62 [INFO][<module>] customer product matrix: 
+product_type_no  -1     49    57    59    66    67    68    69   ...   515   521   523   525   529   532   761   762
+customer_id                                                      ...                                                
+-2147465265       0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0  ...   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+-2147408733       0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0  ...   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+-2147341783       0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0  ...   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+-2147327320       0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0  ...   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+-2147301640       0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0  ...   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+...               ...   ...   ...   ...   ...   ...   ...   ...  ...   ...   ...   ...   ...   ...   ...   ...   ...
+ 2147359116       0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0  ...   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+ 2147396200       0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0  ...   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+ 2147417672       0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0  ...   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+ 2147449857       0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0  ...   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+ 2147473635       0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0  ...   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+
+[256345 rows x 122 columns]

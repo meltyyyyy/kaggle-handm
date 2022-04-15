@@ -65,6 +65,7 @@ user_simi_matrix = cosine_similarity(cust_prod_matrix)
 logger.info(f'user similarity matrix: \n{user_simi_matrix}')
 logger.info(f'user_similarity_matrix shape: \n{user_simi_matrix.shape}')
 
+
 class CfRec():
     def __init__(self, M, X, items, k=20, top_n=10):
         self.X = X
