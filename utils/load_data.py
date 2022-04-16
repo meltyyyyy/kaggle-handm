@@ -48,7 +48,7 @@ def load_article_data():
     return df
 
 
-def load_test_data():
+def load_submission_data():
     logger.debug('enter')
     df = pd.read_csv(TEST_DATA)
     logger.debug('exit')
@@ -59,4 +59,4 @@ if __name__ == '__main__':
     print(load_transaction_data().head())
     print(load_customer_data().head())
     print(load_article_data().head())
-    print(load_test_data().head())
+    print(load_submission_data().head())

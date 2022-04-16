@@ -1,2 +1,29 @@
-2022-04-16 02:03:27,279 __main__ 2 [INFO][<module>] start
-2022-04-16 02:04:16,217 __main__ 1 [INFO][<module>] start loading
+2022-04-16 03:16:36,188 __main__ 2 [INFO][<module>] start
+2022-04-16 03:16:36,404 __main__ 1 [INFO][<module>] start loading
+2022-04-16 03:17:19,252 __main__ 2 [INFO][<module>] tran_df shape: (31788324, 6)
+2022-04-16 03:17:19,256 __main__ 3 [INFO][<module>] tran_df sample: 
+       t_dat                                        customer_id article_id  \
+0 2018-09-20  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...  663713001   
+1 2018-09-20  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...  541518023   
+2 2018-09-20  00007d2de826758b65a93dd24ce629ed66842531df6699...  505221004   
+3 2018-09-20  00007d2de826758b65a93dd24ce629ed66842531df6699...  685687003   
+4 2018-09-20  00007d2de826758b65a93dd24ce629ed66842531df6699...  685687004   
+
+      price  sales_channel_id  month  
+0  0.050831                 2      9  
+1  0.030492                 2      9  
+2  0.015237                 2      9  
+3  0.016932                 2      9  
+4  0.016932                 2      9  
+2022-04-16 03:17:19,657 __main__ 1 [INFO][<module>] oldest date: 2018-09-20 00:00:00, latest date: 2020-09-22 00:00:00
+2022-04-16 03:17:27,206 __main__ 3 [INFO][<module>] tran_df: 
+{tran_df}
+2022-04-16 03:17:27,541 __main__ 2 [INFO][<module>] number of transactions per month: 
+6     3670709
+7     3158996
+5     2922134
+4     2817336
+9     2620223
+10    2543812
+8     2490722
+Name: month, dtype: int64
