@@ -6,7 +6,7 @@ LOG_DIR = '../logs/'
 TRANSACTION_DATA = '~/handm/data/input/transactions_train.feather'
 CUSTOMER_DATA = '~/handm/data/input/customers.csv'
 ARTICLE_DATA = '~/handm/data/input/articles.feather'
-TEST_DATA = '~/handm/data/input/test.csv'
+TEST_DATA = '~/handm/data/input/sample_submission.csv'
 
 
 logger = getLogger(__name__)

@@ -3,8 +3,8 @@ from logging import config, getLogger
 
 LOG_CONF = '../configs/log.json'
 
-
 def get_logger(module_name, log_file):
+
     with open(LOG_CONF, 'r') as f:
         log_conf = json.load(f)
 
