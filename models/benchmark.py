@@ -60,7 +60,6 @@ logger.info(f'sub_df sample: \n{sub_df.head()}')
 # %%
 benchmark = sub_df[['customer_id']]
 pred_list = []
-del list
 dummy_list = list((tran_df['article_id'].value_counts()).index)[:12]
 dummy_pred = ' '.join(dummy_list)
 
@@ -73,7 +72,7 @@ for i, cust_id in enumerate(sub_df['customer_id'].values.reshape((-1,))):
         if(len(_list) > 12):
             s = ' '.join(_list)
         else:
-            s = ' '.join(_list + dummy_list[:(12 - len(_list)]))
+            s = ' '.join(_list + dummy_list[:(12 - len(_list))])
     else:
         s = ' '.join(dummy_pred)
 
@@ -86,3 +85,5 @@ logger.info(f'pred sample: \n{benchmark.head()}')
 
 # %%
 benchmark.to_csv('benchmark.csv', index=False)
+
+# %%
