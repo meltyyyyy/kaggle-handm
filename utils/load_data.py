@@ -4,9 +4,9 @@ from logging import Formatter, FileHandler, getLogger
 
 LOG_DIR = '../logs/'
 TRANSACTION_DATA = '~/handm/data/input/transactions_train.feather'
-CUSTOMER_DATA = '~/handm/data/input/customers.csv'
+CUSTOMER_DATA = '~/handm/data/input/customers.feather'
 ARTICLE_DATA = '~/handm/data/input/articles.feather'
-TEST_DATA = '~/handm/data/input/sample_submission.csv'
+TEST_DATA = '~/handm/data/input/sample_submission.feather'
 
 
 logger = getLogger(__name__)
@@ -36,7 +36,7 @@ def load_transaction_data():
 
 def load_customer_data():
     logger.debug('enter')
-    df = pd.read_csv(CUSTOMER_DATA)
+    df = pd.read_feather(CUSTOMER_DATA)
     logger.debug('exit')
     return df
 
@@ -50,7 +50,7 @@ def load_article_data():
 
 def load_submission_data():
     logger.debug('enter')
-    df = pd.read_csv(TEST_DATA)
+    df = pd.read_feather(TEST_DATA)
     logger.debug('exit')
     return df
 

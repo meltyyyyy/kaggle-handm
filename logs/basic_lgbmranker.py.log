@@ -1,0 +1,62 @@
+2022-04-17 07:49:04,832 __main__ 2 [INFO][<module>] start
+2022-04-17 07:49:05,010 __main__ 1 [INFO][<module>] load data
+2022-04-17 07:49:50,518 __main__ 6 [INFO][<module>] tran_df shape: (31788324, 6)
+2022-04-17 07:49:50,523 __main__ 7 [INFO][<module>] tran_df sample: 
+       t_dat                                        customer_id article_id  \
+0 2018-09-20  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...  663713001   
+1 2018-09-20  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...  541518023   
+2 2018-09-20  00007d2de826758b65a93dd24ce629ed66842531df6699...  505221004   
+3 2018-09-20  00007d2de826758b65a93dd24ce629ed66842531df6699...  685687003   
+4 2018-09-20  00007d2de826758b65a93dd24ce629ed66842531df6699...  685687004   
+
+      price  sales_channel_id  week  
+0  0.050831                 2    38  
+1  0.030492                 2    38  
+2  0.015237                 2    38  
+3  0.016932                 2    38  
+4  0.016932                 2    38  
+2022-04-17 07:49:50,896 __main__ 3 [INFO][<module>] arti_df shape: (105542, 25)
+2022-04-17 07:49:50,905 __main__ 4 [INFO][<module>] arti_df sample: 
+  article_id  product_code          prod_name  product_type_no  \
+0  108775015        108775          Strap top              253   
+1  108775044        108775          Strap top              253   
+2  108775051        108775      Strap top (1)              253   
+3  110065001        110065  OP T-shirt (Idro)              306   
+4  110065002        110065  OP T-shirt (Idro)              306   
+
+  product_type_name  product_group_name  graphical_appearance_no  \
+0          Vest top  Garment Upper body                  1010016   
+1          Vest top  Garment Upper body                  1010016   
+2          Vest top  Garment Upper body                  1010017   
+3               Bra           Underwear                  1010016   
+4               Bra           Underwear                  1010016   
+
+  graphical_appearance_name  colour_group_code colour_group_name  ...  \
+0                     Solid                  9             Black  ...   
+1                     Solid                 10             White  ...   
+2                    Stripe                 11         Off White  ...   
+3                     Solid                  9             Black  ...   
+4                     Solid                 10             White  ...   
+
+   department_name index_code        index_name index_group_no  \
+0     Jersey Basic          A        Ladieswear              1   
+1     Jersey Basic          A        Ladieswear              1   
+2     Jersey Basic          A        Ladieswear              1   
+3   Clean Lingerie          B  Lingeries/Tights              1   
+4   Clean Lingerie          B  Lingeries/Tights              1   
+
+   index_group_name section_no            section_name garment_group_no  \
+0        Ladieswear         16  Womens Everyday Basics             1002   
+1        Ladieswear         16  Womens Everyday Basics             1002   
+2        Ladieswear         16  Womens Everyday Basics             1002   
+3        Ladieswear         61         Womens Lingerie             1017   
+4        Ladieswear         61         Womens Lingerie             1017   
+
+   garment_group_name                                        detail_desc  
+0        Jersey Basic            Jersey top with narrow shoulder straps.  
+1        Jersey Basic            Jersey top with narrow shoulder straps.  
+2        Jersey Basic            Jersey top with narrow shoulder straps.  
+3   Under-, Nightwear  Microfibre T-shirt bra with underwired, moulde...  
+4   Under-, Nightwear  Microfibre T-shirt bra with underwired, moulde...  
+
+[5 rows x 25 columns]
