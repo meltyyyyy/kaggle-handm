@@ -1,7 +1,7 @@
-2022-04-17 07:49:04,832 __main__ 2 [INFO][<module>] start
-2022-04-17 07:49:05,010 __main__ 1 [INFO][<module>] load data
-2022-04-17 07:49:50,518 __main__ 6 [INFO][<module>] tran_df shape: (31788324, 6)
-2022-04-17 07:49:50,523 __main__ 7 [INFO][<module>] tran_df sample: 
+2022-04-18 00:58:03,013 __main__ 2 [INFO][<module>] start
+2022-04-18 00:58:03,189 __main__ 1 [INFO][<module>] load data
+2022-04-18 00:58:51,004 __main__ 6 [INFO][<module>] tran_df shape: (31788324, 6)
+2022-04-18 00:58:51,008 __main__ 7 [INFO][<module>] tran_df sample: 
        t_dat                                        customer_id article_id  \
 0 2018-09-20  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...  663713001   
 1 2018-09-20  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...  541518023   
@@ -15,8 +15,8 @@
 2  0.015237                 2    38  
 3  0.016932                 2    38  
 4  0.016932                 2    38  
-2022-04-17 07:49:50,896 __main__ 3 [INFO][<module>] arti_df shape: (105542, 25)
-2022-04-17 07:49:50,905 __main__ 4 [INFO][<module>] arti_df sample: 
+2022-04-18 00:58:51,413 __main__ 3 [INFO][<module>] arti_df shape: (105542, 25)
+2022-04-18 00:58:51,423 __main__ 4 [INFO][<module>] arti_df sample: 
   article_id  product_code          prod_name  product_type_no  \
 0  108775015        108775          Strap top              253   
 1  108775044        108775          Strap top              253   
@@ -60,3 +60,114 @@
 4   Under-, Nightwear  Microfibre T-shirt bra with underwired, moulde...  
 
 [5 rows x 25 columns]
+2022-04-18 00:58:53,282 __main__ 2 [INFO][<module>] cust_df shape: (1371980, 7)
+2022-04-18 00:58:53,287 __main__ 3 [INFO][<module>] cust_df sample: 
+                                         customer_id   FN  Active  \
+0  00000dbacae5abe5e23885899a1fa44253a17956c6d1c3...  NaN     NaN   
+1  0000423b00ade91418cceaf3b26c6af3dd342b51fd051e...  NaN     NaN   
+2  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...  NaN     NaN   
+3  00005ca1c9ed5f5146b52ac8639a40ca9d57aeff4d1bd2...  NaN     NaN   
+4  00006413d8573cd20ed7128e53b7b13819fe5cfc2d801f...  1.0     1.0   
+
+  club_member_status fashion_news_frequency   age  \
+0             ACTIVE                   NONE  49.0   
+1             ACTIVE                   NONE  25.0   
+2             ACTIVE                   NONE  24.0   
+3             ACTIVE                   NONE  54.0   
+4             ACTIVE              Regularly  52.0   
+
+                                         postal_code  
+0  52043ee2162cf5aa7ee79974281641c6f11a68d276429a...  
+1  2973abc54daa8a5f8ccfe9362140c63247c5eee03f1d93...  
+2  64f17e6a330a85798e4998f62d0930d14db8db1c054af6...  
+3  5d36574f52495e81f019b680c843c443bd343d5ca5b1c2...  
+4  25fa5ddee9aac01b35208d01736e57942317d756b32ddd...  
+2022-04-18 00:58:53,565 __main__ 2 [INFO][<module>] test week: 52
+2022-04-18 00:58:59,375 __main__ 4 [INFO][<module>] new tran_df shape: (5528781, 6)
+2022-04-18 00:58:59,380 __main__ 5 [INFO][<module>] new tran_df sample: 
+             t_dat                                        customer_id  \
+1490266 2018-10-22  0000b2f1829e23b24feec422ef13df3ccedaedc85368e6...   
+1490267 2018-10-22  0006bb0fad5c49341bd9cece264271e68e01a4e55f22ec...   
+1490268 2018-10-22  0006bb0fad5c49341bd9cece264271e68e01a4e55f22ec...   
+1490269 2018-10-22  0006bb0fad5c49341bd9cece264271e68e01a4e55f22ec...   
+1490270 2018-10-22  0006bb0fad5c49341bd9cece264271e68e01a4e55f22ec...   
+
+        article_id     price  sales_channel_id  week  
+1490266  687524004  0.025407                 2    43  
+1490267  507910004  0.025407                 2    43  
+1490268  671515001  0.025407                 2    43  
+1490269  671515001  0.025407                 2    43  
+1490270  687524004  0.025407                 2    43  
+2022-04-18 00:59:34,836 __main__ 2 [INFO][<module>] c2week shape: (693330,)
+2022-04-18 00:59:34,839 __main__ 3 [INFO][<module>] c2week: 
+customer_id
+00000dbacae5abe5e23885899a1fa44253a17956c6d1c3d25f88aa139fdfc657    [52, 47, 48]
+0000423b00ade91418cceaf3b26c6af3dd342b51fd051eec9c12fb36984420fa            [43]
+0000757967448a6cb83efb3ea7a3fb9d418ac7adf2379d8cd0c725276a467a2a            [43]
+00007d2de826758b65a93dd24ce629ed66842531df6699338c5570910a014cc2    [43, 52, 47]
+00008469a21b50b3d147c97135e25b4201a8c58997f78782a0cc706645e14493            [46]
+Name: week, dtype: object
+2022-04-18 00:59:52,839 __main__ 5 [INFO][<module>] bestseller_previous_week shape: (120, 4)
+2022-04-18 00:59:52,843 __main__ 6 [INFO][<module>] bestseller_previous_week sample: 
+   week article_id  bestseller_rank     price
+0    44  399223001              1.0  0.025852
+1    44  673677002              2.0  0.021328
+2    44  158340001              3.0  0.012038
+3    44  591088001              4.0  0.013294
+4    44  156231001              5.0  0.006463
+2022-04-18 01:00:13,132 __main__ 4 [INFO][<module>] data info: (35250198, 7)
+2022-04-18 01:00:13,137 __main__ 5 [INFO][<module>] data sample: 
+             t_dat                                        customer_id  \
+1490266 2018-10-22  0000b2f1829e23b24feec422ef13df3ccedaedc85368e6...   
+1490267 2018-10-22  0006bb0fad5c49341bd9cece264271e68e01a4e55f22ec...   
+1490268 2018-10-22  0006bb0fad5c49341bd9cece264271e68e01a4e55f22ec...   
+1490269 2018-10-22  0006bb0fad5c49341bd9cece264271e68e01a4e55f22ec...   
+1490270 2018-10-22  0006bb0fad5c49341bd9cece264271e68e01a4e55f22ec...   
+
+        article_id     price  sales_channel_id  week  purchased  
+1490266  687524004  0.025407                 2    43        1.0  
+1490267  507910004  0.025407                 2    43        1.0  
+1490268  671515001  0.025407                 2    43        1.0  
+1490269  671515001  0.025407                 2    43        1.0  
+1490270  687524004  0.025407                 2    43        1.0  
+2022-04-18 01:04:52,339 __main__ 2 [INFO][<module>] bestseller_rank:0.9986297203509817
+2022-04-18 01:04:52,341 __main__ 2 [INFO][<module>] article_id:0.0005905874294976712
+2022-04-18 01:04:52,343 __main__ 2 [INFO][<module>] age:0.00047306892089608974
+2022-04-18 01:04:52,344 __main__ 2 [INFO][<module>] department_no:0.00012717071446088929
+2022-04-18 01:04:52,345 __main__ 2 [INFO][<module>] FN:8.04700630449069e-05
+2022-04-18 01:04:52,346 __main__ 2 [INFO][<module>] product_type_no:5.605201697263874e-05
+2022-04-18 01:04:52,347 __main__ 2 [INFO][<module>] garment_group_no:4.293050414603249e-05
+2022-04-18 01:04:52,348 __main__ 2 [INFO][<module>] section_no:0.0
+2022-04-18 01:04:52,349 __main__ 2 [INFO][<module>] index_group_no:0.0
+2022-04-18 01:04:52,350 __main__ 2 [INFO][<module>] perceived_colour_master_id:0.0
+2022-04-18 01:04:52,352 __main__ 2 [INFO][<module>] perceived_colour_value_id:0.0
+2022-04-18 01:04:52,353 __main__ 2 [INFO][<module>] colour_group_code:0.0
+2022-04-18 01:04:52,354 __main__ 2 [INFO][<module>] graphical_appearance_no:0.0
+2022-04-18 01:06:47,266 __main__ 2 [INFO][<module>] bestseller_rank:0.9986297203509817
+2022-04-18 01:06:47,269 __main__ 2 [INFO][<module>] article_id:0.0005905874294976712
+2022-04-18 01:06:47,271 __main__ 2 [INFO][<module>] age:0.00047306892089608974
+2022-04-18 01:06:47,272 __main__ 2 [INFO][<module>] department_no:0.00012717071446088929
+2022-04-18 01:06:47,274 __main__ 2 [INFO][<module>] FN:8.04700630449069e-05
+2022-04-18 01:06:47,276 __main__ 2 [INFO][<module>] product_type_no:5.605201697263874e-05
+2022-04-18 01:06:47,277 __main__ 2 [INFO][<module>] garment_group_no:4.293050414603249e-05
+2022-04-18 01:06:47,277 __main__ 2 [INFO][<module>] section_no:0.0
+2022-04-18 01:06:47,279 __main__ 2 [INFO][<module>] index_group_no:0.0
+2022-04-18 01:06:47,280 __main__ 2 [INFO][<module>] perceived_colour_master_id:0.0
+2022-04-18 01:06:47,281 __main__ 2 [INFO][<module>] perceived_colour_value_id:0.0
+2022-04-18 01:06:47,282 __main__ 2 [INFO][<module>] colour_group_code:0.0
+2022-04-18 01:06:47,283 __main__ 2 [INFO][<module>] graphical_appearance_no:0.0
+2022-04-18 01:07:43,250 __main__ 2 [INFO][<module>] sub_df shape: (1371980, 2)
+2022-04-18 01:07:43,253 __main__ 3 [INFO][<module>] sub_df sample: 
+                                         customer_id  \
+0  00000dbacae5abe5e23885899a1fa44253a17956c6d1c3...   
+1  0000423b00ade91418cceaf3b26c6af3dd342b51fd051e...   
+2  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...   
+3  00005ca1c9ed5f5146b52ac8639a40ca9d57aeff4d1bd2...   
+4  00006413d8573cd20ed7128e53b7b13819fe5cfc2d801f...   
+
+                                          prediction  
+0  0706016001 0706016002 0372860001 0610776002 07...  
+1  0706016001 0706016002 0372860001 0610776002 07...  
+2  0706016001 0706016002 0372860001 0610776002 07...  
+3  0706016001 0706016002 0372860001 0610776002 07...  
+4  0706016001 0706016002 0372860001 0610776002 07...  
