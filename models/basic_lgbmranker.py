@@ -4,10 +4,10 @@ import os
 sys.path.append(os.pardir)
 
 # %%
-from lightgbm.sklearn import LGBMRanker
-from logs.logger import get_logger
-from utils.load_data import load_submission_data, load_transaction_data, load_article_data, load_customer_data
 import pandas as pd
+from utils.load_data import load_submission_data, load_transaction_data, load_article_data, load_customer_data
+from logs.logger import get_logger
+from lightgbm.sklearn import LGBMRanker
 
 # %%
 DRY_RUN = True
@@ -62,26 +62,39 @@ for cust_id, weeks in cust2weeks.items():
 candidates_last_purchase = tran_df.copy()
 
 weeks = []
-for i, (cust_id, week) in enumerate(zip(tran_df['customer_id'], tran_df['week'])):
+for i, (cust_id, week) in enumerate(
+        zip(tran_df['customer_id'], tran_df['week'])):
     weeks.append(cust2weeks_shifted_weeks[cust_id][week])
 
 candidates_last_purchase.week = weeks
 
 # %%
 mean_price = tran_df.groupby(['week', 'article_id'])['price'].mean()
-sales = tran_df.groupby('week')['article_id'].value_counts().groupby('week').rank(method='dense', ascending=False).groupby('week').head(12).rename('bestseller_rank')
-bestsellers_previous_week = pd.merge(sales, mean_price, on=['week', 'article_id']).reset_index()
+sales = tran_df.groupby('week')['article_id'].value_counts().groupby('week').rank(
+    method='dense', ascending=False).groupby('week').head(12).rename('bestseller_rank')
+bestsellers_previous_week = pd.merge(
+    sales, mean_price, on=[
+        'week', 'article_id']).reset_index()
 bestsellers_previous_week.week += 1
-logger.info(f'bestseller_previous_week shape: {bestsellers_previous_week.shape}')
-logger.info(f'bestseller_previous_week sample: \n{bestsellers_previous_week.head()}')
+logger.info(
+    f'bestseller_previous_week shape: {bestsellers_previous_week.shape}')
+logger.info(
+    f'bestseller_previous_week sample: \n{bestsellers_previous_week.head()}')
 
 # %%
-unique_transactions = tran_df.groupby(['week', 'customer_id']).head(1).drop(columns=['article_id', 'price']).copy()
-candidates_bestsellers = pd.merge(unique_transactions, bestsellers_previous_week, on='week')
-test_set_transactions = unique_transactions.drop_duplicates('customer_id').reset_index(drop=True)
+unique_transactions = tran_df.groupby(['week', 'customer_id']).head(
+    1).drop(columns=['article_id', 'price']).copy()
+candidates_bestsellers = pd.merge(
+    unique_transactions,
+    bestsellers_previous_week,
+    on='week')
+test_set_transactions = unique_transactions.drop_duplicates(
+    'customer_id').reset_index(drop=True)
 test_set_transactions.week = test_week
-candidates_bestsellers_test_week = pd.merge(test_set_transactions, bestsellers_previous_week, on='week')
-candidates_bestsellers = pd.concat([candidates_bestsellers, candidates_bestsellers_test_week])
+candidates_bestsellers_test_week = pd.merge(
+    test_set_transactions, bestsellers_previous_week, on='week')
+candidates_bestsellers = pd.concat(
+    [candidates_bestsellers, candidates_bestsellers_test_week])
 candidates_bestsellers.drop(columns='bestseller_rank', inplace=True)
 
 # %%
@@ -92,7 +105,8 @@ logger.info(f'data info: {data.shape}')
 logger.info(f'data sample: \n{data.head()}')
 
 # %%
-data = pd.merge(data, bestsellers_previous_week[['week', 'article_id', 'bestseller_rank']], on=['week', 'article_id'], how='left')
+data = pd.merge(data, bestsellers_previous_week[[
+                'week', 'article_id', 'bestseller_rank']], on=['week', 'article_id'], how='left')
 data = data[data.week != data.week.min()].copy()
 data.bestseller_rank.fillna(999, inplace=True)
 
@@ -103,8 +117,10 @@ data.sort_values(['week', 'customer_id'], inplace=True)
 data.reset_index(drop=True, inplace=True)
 
 train_df = data[data.week != test_week]
-test_df = data[data.week == test_week].drop_duplicates(['customer_id', 'article_id', 'sales_channel_id']).copy()
-train_baskets = train_df.groupby(['week', 'customer_id'])['article_id'].count().values
+test_df = data[data.week == test_week].drop_duplicates(
+    ['customer_id', 'article_id', 'sales_channel_id']).copy()
+train_baskets = train_df.groupby(['week', 'customer_id'])[
+    'article_id'].count().values
 
 # %%
 columns_to_use = [
@@ -151,7 +167,11 @@ ranker = ranker.fit(
 
 # %%
 for i in ranker.feature_importances_.argsort()[::-1]:
-    logger.info('{}:{}'.format(columns_to_use[i], ranker.feature_importances_[i]/ranker.feature_importances_.sum()))
+    logger.info(
+        '{}:{}'.format(
+            columns_to_use[i],
+            ranker.feature_importances_[i] /
+            ranker.feature_importances_.sum()))
 
 # %%
 test_df['preds'] = ranker.predict(test_X)
@@ -160,7 +180,8 @@ cust_id2predicted_article_ids = test_df \
     .sort_values(['customer_id', 'preds'], ascending=False) \
     .groupby('customer_id')['article_id'].apply(list).to_dict()
 
-bestsellers_last_week = ['0'+str(arti_id) for arti_id in bestsellers_previous_week[bestsellers_previous_week.week == bestsellers_previous_week.week.max()]['article_id'].tolist()]
+bestsellers_last_week = ['0' + str(arti_id) for arti_id in bestsellers_previous_week[bestsellers_previous_week.week ==
+                                                                                     bestsellers_previous_week.week.max()]['article_id'].tolist()]
 
 # %%
 sub_df = load_submission_data()
@@ -177,6 +198,8 @@ for cust_id in sub_df.customer_id:
         preds.append(bestsellers_last_week)
 preds = [' '.join(ps) for ps in preds]
 sub_df.prediction = preds
+logger.info(f'submission shape: {sub_df.shape}')
+logger.info(f'submission sample: \n{sub_df.head()}')
 sub_df.to_csv('basic_lgbmranker.csv', index=False)
 
 # %%
