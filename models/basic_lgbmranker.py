@@ -201,5 +201,3 @@ sub_df.prediction = preds
 logger.info(f'submission shape: {sub_df.shape}')
 logger.info(f'submission sample: \n{sub_df.head()}')
 sub_df.to_csv('basic_lgbmranker.csv', index=False)
-
-# %%
