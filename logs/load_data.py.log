@@ -53,3 +53,8 @@
 2022-04-21 02:29:12,964 load_data 38 [DEBUG][load_customer_data] enter 
 2022-04-21 02:29:14,288 load_data 40 [DEBUG][load_customer_data] exit 
 2022-04-21 02:33:28,188 load_data 31 [DEBUG][load_transaction_data] enter 
+2022-04-21 02:33:37,151 load_data 33 [DEBUG][load_transaction_data] exit 
+2022-04-21 02:33:37,155 load_data 45 [DEBUG][load_article_data] enter 
+2022-04-21 02:33:37,254 load_data 47 [DEBUG][load_article_data] exit 
+2022-04-21 02:33:37,255 load_data 38 [DEBUG][load_customer_data] enter 
+2022-04-21 02:33:38,686 load_data 40 [DEBUG][load_customer_data] exit 
