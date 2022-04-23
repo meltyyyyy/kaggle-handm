@@ -5,7 +5,7 @@ from logging import Formatter, FileHandler, getLogger
 LOG_DIR = '../logs/'
 TRANSACTION_DATA = '~/handm/data/input/tran_sample_small.feather'
 CUSTOMER_DATA = '~/handm/data/input/cust_sample_small.feather'
-ARTICLE_DATA = '~/handm/data/input/art_sample_small.feather'
+ARTICLE_DATA = '~/handm/data/input/arti_sample_small.feather'
 TEST_DATA = '~/handm/data/input/sample_submission.feather'
 
 
