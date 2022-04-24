@@ -5,15 +5,15 @@ sys.path.append(os.pardir)
 
 # %%
 from load_data import load_transaction_data, load_article_data, load_customer_data
-from memory_reduction import customer_hex_id_to_int, article_id_int_to_str
+from memory_reduction import customer_hex_id_to_int
 from categorize import Categorize
-from configs.data import INPUT_DIR
+from configs.data import INPUT_DIR, OUTPUT_DIR
 import pandas as pd
 
 # %%
-tran_df = load_transaction_data()
-arti_df = load_article_data()
-cust_df = load_customer_data()
+tran_df = pd.read_csv(INPUT_DIR + 'original/transactions_train.csv')
+arti_df = pd.read_csv(INPUT_DIR + 'original/articles.csv')
+cust_df = pd.read_csv(INPUT_DIR + 'original/customers.csv')
 
 # %%
 tran_df.memory_usage(deep=True)
@@ -21,7 +21,30 @@ tran_df.memory_usage(deep=True)
 # %%
 tran_df.info(memory_usage='deep')
 
-# %%t
+# %%
+tran_df['t_dat'] = pd.to_datetime(tran_df['t_dat'])
+
+# %%
+valid_df = tran_df
+valid_df = valid_df[valid_df['t_dat'] >= pd.to_datetime('2020-09-16')]
+tran_df = tran_df[tran_df['t_dat'] <= pd.to_datetime('2020-09-15')]
+
+# %%
+valid_df = valid_df.groupby('customer_id')['article_id'].apply(list).reset_index()
+valid_df = valid_df.rename({'article_id': 'prediction'}, axis=1)
+valid_df['prediction'] = valid_df['prediction'].apply(lambda x: ' '.join(['0' + str(k) for k in x]))
+
+# %%
+valid_df.memory_usage(deep=True)
+
+# %%
+valid_df.info(memory_usage='deep')
+
+# %%
+valid_df.head()
+valid_df.to_feather(INPUT_DIR + 'valid_sample.feather')
+
+# %%
 %%time
 tran_df['customer_id'].nunique()
 
@@ -37,9 +60,6 @@ tran_df.memory_usage(deep=True)
 
 # %%
 tran_df.info(memory_usage='deep')
-
-# %%
-tran_df['t_dat'] = pd.to_datetime(tran_df['t_dat'])
 
 # %%
 tran_df['week'] = 104 - (tran_df.t_dat.max() - tran_df.t_dat).dt.days // 7
