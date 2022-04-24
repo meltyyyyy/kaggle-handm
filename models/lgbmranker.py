@@ -7,6 +7,7 @@ sys.path.append(os.pardir)
 from logs.logger import get_logger
 from utils.load_data import load_submission_data, load_transaction_data, load_article_data, load_customer_data
 from utils.validations import eval_sub
+from preprocess.group_by_age import join_age_id
 from configs.data import OUTPUT_DIR
 from lightgbm import LGBMRanker
 import pandas as pd
@@ -89,6 +90,10 @@ candidates_bestsellers = pd.concat(
 candidates_bestsellers.drop(columns='bestseller_rank', inplace=True)
 
 # %%
+cust_df = join_age_id(cust_df=cust_df)
+cust_df.drop(columns=['age'], inplace=True)
+
+# %%
 tran_df['purchased'] = 1
 data = pd.concat([tran_df, candidates_last_purchase, candidates_bestsellers])
 data.purchased.fillna(0, inplace=True)
@@ -118,7 +123,7 @@ train_baskets = train_df.groupby(['week', 'customer_id'])[
 columns_to_use = ['article_id', 'product_type_no', 'graphical_appearance_no', 'colour_group_code', 'perceived_colour_value_id',
 'perceived_colour_master_id', 'department_no', 'index_code',
 'index_group_no', 'section_no', 'garment_group_no', 'FN', 'Active',
-'club_member_status', 'fashion_news_frequency', 'age', 'postal_code', 'bestseller_rank']
+'club_member_status', 'fashion_news_frequency', 'age_id', 'postal_code', 'bestseller_rank', 'attribute']
 
 # %%
 train_X = train_df[columns_to_use]

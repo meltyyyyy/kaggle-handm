@@ -5,8 +5,8 @@ sys.path.append(os.pardir)
 
 # %%
 from configs.data import INPUT_DIR
+from utils.categorize import Categorize
 import pandas as pd
-from numpy import NaN
 
 # %%
 tran_df = pd.read_feather(INPUT_DIR + 'tran_sample.feather')
@@ -63,6 +63,17 @@ cust_df['attribute'].fillna('Women', inplace=True)
 
 # %%
 cust_df.isnull().sum()
+
+# %%
+cust_df.info(memory_usage='deep')
+cust_df.head()
+
+# %%
+cust_df['attribute'] = Categorize().fit_transform(cust_df[['attribute']])['attribute']
+
+# %%
+cust_df.info(memory_usage='deep')
+cust_df.head()
 
 # %%
 cust_df.to_feather(INPUT_DIR + 'cust_with_sex.feather')

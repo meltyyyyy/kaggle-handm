@@ -1,15 +1,15 @@
-2022-04-24 02:02:50,067 __main__ 2 [INFO][<module>] start
-2022-04-24 02:02:50,377 __main__ 1 [INFO][<module>] load data
-2022-04-24 02:02:51,322 __main__ 5 [INFO][<module>] tran_df shape: (31548013, 6)
-2022-04-24 02:02:51,328 __main__ 6 [INFO][<module>] tran_df head: 
+2022-04-24 06:23:07,364 __main__ 2 [INFO][<module>] start
+2022-04-24 06:23:07,608 __main__ 1 [INFO][<module>] load data
+2022-04-24 06:23:08,451 __main__ 5 [INFO][<module>] tran_df shape: (31548013, 6)
+2022-04-24 06:23:08,457 __main__ 6 [INFO][<module>] tran_df head: 
        t_dat       customer_id  article_id     price  sales_channel_id  week
 0 2018-09-20  1728846800780188   519773001  0.028458                 2     1
 1 2018-09-20  1728846800780188   578472001  0.032525                 2     1
 2 2018-09-20  2076973761519164   661795002  0.167797                 2     1
 3 2018-09-20  2076973761519164   684080003  0.101678                 2     1
 4 2018-09-20  2918879973994241   662980001  0.033881                 1     1
-2022-04-24 02:02:51,329 __main__ 7 [INFO][<module>] arti_df shape: (105542, 25)
-2022-04-24 02:02:51,336 __main__ 8 [INFO][<module>] arti_df head: 
+2022-04-24 06:23:08,458 __main__ 7 [INFO][<module>] arti_df shape: (105542, 25)
+2022-04-24 06:23:08,465 __main__ 8 [INFO][<module>] arti_df head: 
    article_id  product_code  prod_name  product_type_no  product_type_name  \
 0   108775015        108775      12855              253                  9   
 1   108775044        108775      12855              253                  9   
@@ -46,8 +46,8 @@
 4              1017                   4         8243  
 
 [5 rows x 25 columns]
-2022-04-24 02:02:51,337 __main__ 9 [INFO][<module>] cust_df shape: (1371980, 7)
-2022-04-24 02:02:51,339 __main__ 10 [INFO][<module>] cust_df head: 
+2022-04-24 06:23:08,466 __main__ 9 [INFO][<module>] cust_df shape: (1371980, 8)
+2022-04-24 06:23:08,470 __main__ 10 [INFO][<module>] cust_df head: 
             customer_id  FN  Active  club_member_status  \
 0   6883939031699146327  -1      -1                   0   
 1  11246327431398957306  -1      -1                   0   
@@ -55,138 +55,9 @@
 3  18352672461570950206  -1      -1                   0   
 4  18162778555210377306   1       1                   0   
 
-   fashion_news_frequency  age  postal_code  
-0                       0   49         6305  
-1                       0   25        33726  
-2                       0   24         3247  
-3                       0   54       168643  
-4                       1   52       168645  
-2022-04-24 02:03:11,151 __main__ 2 [INFO][<module>] c2week shape: (444431,)
-2022-04-24 02:03:11,155 __main__ 3 [INFO][<module>] c2week: 
-customer_id
-28847241659200     [95, 96, 97, 102, 103]
-41318098387474                       [99]
-116809474287335                     [102]
-200292573348128    [94, 96, 97, 100, 103]
-208119717816961                      [95]
-Name: week, dtype: object
-2022-04-24 02:03:21,349 __main__ 8 [INFO][<module>] bestseller_previous_week shape: (120, 4)
-2022-04-24 02:03:21,352 __main__ 10 [INFO][<module>] bestseller_previous_week sample: 
-   week  article_id  bestseller_rank     price
-0    95   372860069              1.0  0.005614
-1    95   850244003              2.0  0.004274
-2    95   866383006              3.0  0.024995
-3    95   706016001              4.0  0.033263
-4    95   806388002              5.0  0.013060
-2022-04-24 02:03:57,659 __main__ 16 [INFO][<module>] data info: (18430678, 38)
-2022-04-24 02:03:57,667 __main__ 17 [INFO][<module>] data sample: 
-       t_dat     customer_id  article_id     price  sales_channel_id  week  \
-0 2020-07-14  28847241659200   730683036  0.042356                 1    95   
-1 2020-07-14  28847241659200   851094001  0.011000                 1    95   
-2 2020-07-14  28847241659200   757303012  0.030492                 1    95   
-3 2020-07-14  28847241659200   372860069  0.005614                 1    95   
-4 2020-07-14  28847241659200   850244003  0.004274                 1    95   
-
-   purchased  bestseller_rank  product_code  prod_name  ...  section_name  \
-0        1.0            999.0        730683        103  ...            21   
-1        1.0            999.0        851094       4663  ...            21   
-2        1.0            999.0        757303       1314  ...            21   
-3        0.0              1.0        372860        672  ...            31   
-4        0.0              2.0        850244       2959  ...             0   
-
-   garment_group_no  garment_group_name  detail_desc  FN  Active  \
-0              1005                   0          178   1       1   
-1              1005                   0         2046   1       1   
-2              1005                   0          896   1       1   
-3              1021                  13          157   1       1   
-4              1010                   6         3747   1       1   
-
-   club_member_status  fashion_news_frequency  age  postal_code  
-0                   0                       1   21        57896  
-1                   0                       1   21        57896  
-2                   0                       1   21        57896  
-3                   0                       1   21        57896  
-4                   0                       1   21        57896  
-
-[5 rows x 38 columns]
-2022-04-24 02:05:00,396 __main__ 2 [INFO][<module>] bestseller_rank:0.9558655029637996
-2022-04-24 02:05:00,398 __main__ 2 [INFO][<module>] article_id:0.016918569830816122
-2022-04-24 02:05:00,399 __main__ 2 [INFO][<module>] product_type_no:0.008775188382080495
-2022-04-24 02:05:00,400 __main__ 2 [INFO][<module>] department_no:0.005172453487298995
-2022-04-24 02:05:00,401 __main__ 2 [INFO][<module>] garment_group_no:0.003732624568989776
-2022-04-24 02:05:00,402 __main__ 2 [INFO][<module>] colour_group_code:0.003635033725861238
-2022-04-24 02:05:00,403 __main__ 2 [INFO][<module>] graphical_appearance_no:0.0010528155524725036
-2022-04-24 02:05:00,404 __main__ 2 [INFO][<module>] perceived_colour_value_id:0.0010117710707952961
-2022-04-24 02:05:00,405 __main__ 2 [INFO][<module>] section_no:0.0009434843244447414
-2022-04-24 02:05:00,406 __main__ 2 [INFO][<module>] perceived_colour_master_id:0.0005472616658740051
-2022-04-24 02:05:00,407 __main__ 2 [INFO][<module>] club_member_status:0.0005082312043368817
-2022-04-24 02:05:00,408 __main__ 2 [INFO][<module>] index_group_no:0.0004665842477439231
-2022-04-24 02:05:00,408 __main__ 2 [INFO][<module>] index_code:0.0004102347421581101
-2022-04-24 02:05:00,409 __main__ 2 [INFO][<module>] postal_code:0.0003812913964052006
-2022-04-24 02:05:00,410 __main__ 2 [INFO][<module>] age:0.00028656742840547347
-2022-04-24 02:05:00,411 __main__ 2 [INFO][<module>] fashion_news_frequency:0.00015960704881855977
-2022-04-24 02:05:00,412 __main__ 2 [INFO][<module>] Active:0.00013277835969905806
-2022-04-24 02:05:00,413 __main__ 2 [INFO][<module>] FN:0.0
-2022-04-24 02:05:17,061 __main__ 2 [INFO][<module>] sub_df shape: (1371980, 2)
-2022-04-24 02:05:17,064 __main__ 3 [INFO][<module>] sub_df sample: 
-                                         customer_id  \
-0  00000dbacae5abe5e23885899a1fa44253a17956c6d1c3...   
-1  0000423b00ade91418cceaf3b26c6af3dd342b51fd051e...   
-2  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...   
-3  00005ca1c9ed5f5146b52ac8639a40ca9d57aeff4d1bd2...   
-4  00006413d8573cd20ed7128e53b7b13819fe5cfc2d801f...   
-
-                                          prediction  
-0  0706016001 0706016002 0372860001 0610776002 07...  
-1  0706016001 0706016002 0372860001 0610776002 07...  
-2  0706016001 0706016002 0372860001 0610776002 07...  
-3  0706016001 0706016002 0372860001 0610776002 07...  
-4  0706016001 0706016002 0372860001 0610776002 07...  
-2022-04-24 02:05:18,594 __main__ 10 [INFO][<module>] submission shape: (1371980, 2)
-2022-04-24 02:05:18,598 __main__ 11 [INFO][<module>] submission sample: 
-                                         customer_id  \
-0  00000dbacae5abe5e23885899a1fa44253a17956c6d1c3...   
-1  0000423b00ade91418cceaf3b26c6af3dd342b51fd051e...   
-2  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...   
-3  00005ca1c9ed5f5146b52ac8639a40ca9d57aeff4d1bd2...   
-4  00006413d8573cd20ed7128e53b7b13819fe5cfc2d801f...   
-
-                                          prediction  
-0  0915526001 0751471043 0751471001 0706016001 09...  
-1  0915526001 0751471043 0751471001 0706016001 09...  
-2  0915526001 0751471043 0751471001 0706016001 09...  
-3  0915526001 0751471043 0751471001 0706016001 09...  
-4  0915526001 0751471043 0751471001 0706016001 09...  
-2022-04-24 02:06:49,525 __main__ 2 [INFO][<module>] bestseller_rank:0.9823281554043634
-2022-04-24 02:06:49,526 __main__ 2 [INFO][<module>] article_id:0.00764141899628006
-2022-04-24 02:06:49,527 __main__ 2 [INFO][<module>] colour_group_code:0.0031781671453700168
-2022-04-24 02:06:49,529 __main__ 2 [INFO][<module>] product_type_no:0.002737457152544054
-2022-04-24 02:06:49,530 __main__ 2 [INFO][<module>] department_no:0.0013107817401636795
-2022-04-24 02:06:49,531 __main__ 2 [INFO][<module>] club_member_status:0.0006541802632277137
-2022-04-24 02:06:49,531 __main__ 2 [INFO][<module>] postal_code:0.0006527120494681227
-2022-04-24 02:06:49,532 __main__ 2 [INFO][<module>] garment_group_no:0.000602729075028289
-2022-04-24 02:06:49,533 __main__ 2 [INFO][<module>] Active:0.00028494004107319836
-2022-04-24 02:06:49,534 __main__ 2 [INFO][<module>] fashion_news_frequency:0.00023502179515433986
-2022-04-24 02:06:49,535 __main__ 2 [INFO][<module>] age:0.00022397770663192047
-2022-04-24 02:06:49,536 __main__ 2 [INFO][<module>] graphical_appearance_no:0.00015045863069519574
-2022-04-24 02:06:49,537 __main__ 2 [INFO][<module>] FN:0.0
-2022-04-24 02:06:49,538 __main__ 2 [INFO][<module>] section_no:0.0
-2022-04-24 02:06:49,539 __main__ 2 [INFO][<module>] index_code:0.0
-2022-04-24 02:06:49,539 __main__ 2 [INFO][<module>] perceived_colour_master_id:0.0
-2022-04-24 02:06:49,540 __main__ 2 [INFO][<module>] perceived_colour_value_id:0.0
-2022-04-24 02:06:49,541 __main__ 2 [INFO][<module>] index_group_no:0.0
-2022-04-24 02:07:07,491 __main__ 2 [INFO][<module>] sub_df shape: (1371980, 2)
-2022-04-24 02:07:07,494 __main__ 3 [INFO][<module>] sub_df sample: 
-                                         customer_id  \
-0  00000dbacae5abe5e23885899a1fa44253a17956c6d1c3...   
-1  0000423b00ade91418cceaf3b26c6af3dd342b51fd051e...   
-2  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...   
-3  00005ca1c9ed5f5146b52ac8639a40ca9d57aeff4d1bd2...   
-4  00006413d8573cd20ed7128e53b7b13819fe5cfc2d801f...   
-
-                                          prediction  
-0  0706016001 0706016002 0372860001 0610776002 07...  
-1  0706016001 0706016002 0372860001 0610776002 07...  
-2  0706016001 0706016002 0372860001 0610776002 07...  
-3  0706016001 0706016002 0372860001 0610776002 07...  
-4  0706016001 0706016002 0372860001 0610776002 07...  
+   fashion_news_frequency  age  postal_code  attribute  
+0                       0   49         6305          0  
+1                       0   25        33726          0  
+2                       0   24         3247          0  
+3                       0   54       168643          4  
+4                       1   52       168645          0  
