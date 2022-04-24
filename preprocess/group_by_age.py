@@ -1,22 +1,4 @@
-# %%
-import sys
-import os
-sys.path.append(os.pardir)
-
-# %%
-from configs.data import INPUT_DIR
 import pandas as pd
-
-# %%
-cust_df = pd.read_feather(INPUT_DIR + 'cust_sample.feather')
-
-# %%
-cust_df.info(memory_usage='deep')
-
-# %%
-cust_df['age'].plot.hist(bins=50)
-
-# %%
 
 
 def create_age_df():
@@ -58,21 +40,8 @@ def create_age_df():
     age_group.reset_index(drop=True, inplace=True)
     return age_group
 
-# %%
-
 
 def join_age_id(cust_df):
     age_group = create_age_df()
     cust_df = pd.merge(cust_df, age_group, on="age", how="left")
     return cust_df
-
-# %%
-age_group = create_age_df()
-
-# %%
-cust_df = join_age_id(cust_df=cust_df)
-
-# %%
-cust_df.info()
-
-# %%
