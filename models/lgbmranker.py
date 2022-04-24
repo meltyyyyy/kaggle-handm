@@ -119,14 +119,10 @@ train_baskets = train_df.groupby(['week', 'customer_id'])[
 columns_to_use = [
     'article_id',
     'product_type_no',
-    'graphical_appearance_no',
-    'colour_group_code',
     'perceived_colour_value_id',
     'perceived_colour_master_id',
     'department_no',
-    'index_group_no',
     'section_no',
-    'garment_group_no',
     'FN',
     'age',
     'bestseller_rank']
@@ -144,8 +140,9 @@ train_X.info()
 ranker = LGBMRanker(
     objective="lambdarank",
     metric="ndcg",
-    boosting_type="dart",
-    n_estimators=1,
+    boosting_type="gbdt",
+    n_estimators=100,
+    learning_rate=0.01,
     importance_type='gain',
     verbose=10
 )
