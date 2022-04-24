@@ -4,7 +4,6 @@ import os
 sys.path.append(os.pardir)
 
 # %%
-from load_data import load_transaction_data, load_article_data, load_customer_data
 from memory_reduction import customer_hex_id_to_int
 from categorize import Categorize
 from configs.data import INPUT_DIR, OUTPUT_DIR

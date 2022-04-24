@@ -1,4 +1,4 @@
-from average_precision import apk
+from utils.average_precision import apk
 from configs.data import INPUT_DIR
 import pandas as pd
 import numpy as np
@@ -14,15 +14,15 @@ def calculate_apk(list_of_preds, list_of_gts):
 
 
 def eval_sub(sub_csv, skip_cust_with_no_purchases=True):
-    sub = pd.read_csv(sub_csv)
+    sub_df = pd.read_csv(sub_csv)
     validation_set = pd.read_feather(INPUT_DIR + 'valid_sample.feather')
 
     apks = []
 
     no_purchases_pattern = []
-    for pred, gt in zip(sub.prediction.str.split(),
-                        validation_set.prediction.str.split()):
-        if skip_cust_with_no_purchases and (gt == no_purchases_pattern):
+    for pred, valid in zip(sub_df['prediction'].str.split(),
+                        validation_set['prediction'].str.split()):
+        if skip_cust_with_no_purchases and (valid == no_purchases_pattern):
             continue
-        apks.append(apk(gt, pred, k=12))
+        apks.append(apk(valid, pred, k=12))
     return np.mean(apks)

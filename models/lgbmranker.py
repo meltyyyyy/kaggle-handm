@@ -1,14 +1,14 @@
 # %%
 import sys
 import os
-
-from lightgbm import LGBMRanker
 sys.path.append(os.pardir)
 
 # %%
 from logs.logger import get_logger
 from utils.load_data import load_submission_data, load_transaction_data, load_article_data, load_customer_data
+from utils.validations import eval_sub
 from configs.data import OUTPUT_DIR
+from lightgbm import LGBMRanker
 import pandas as pd
 
 # %%
@@ -33,10 +33,8 @@ logger.info(f'cust_df head: \n{cust_df.head()}')
 
 # %%
 test_week = tran_df.week.max()
-logger.info(f'test week: {test_week}')
-tran_df = tran_df[tran_df.week > test_week - 4]
-logger.info(f'new tran_df shape: {tran_df.shape}')
-logger.info(f'new tran_df sample: \n{tran_df.head()}')
+tran_df = tran_df[tran_df.week != tran_df.week.max()]
+tran_df = tran_df[tran_df.week > tran_df.week.max() - 10]
 
 # %%
 cust2weeks = tran_df.groupby('customer_id')['week'].unique()
@@ -94,10 +92,11 @@ candidates_bestsellers.drop(columns='bestseller_rank', inplace=True)
 tran_df['purchased'] = 1
 data = pd.concat([tran_df, candidates_last_purchase, candidates_bestsellers])
 data.purchased.fillna(0, inplace=True)
+data.drop_duplicates(['customer_id', 'article_id', 'week'], inplace=True)
 
 data = pd.merge(data, bestsellers_previous_week[[
                 'week', 'article_id', 'bestseller_rank']], on=['week', 'article_id'], how='left')
-data = data[data.week != data.week.min()].copy()
+data = data[data.week != data.week.min()]
 data.bestseller_rank.fillna(999, inplace=True)
 
 data = pd.merge(data, arti_df, on='article_id', how='left')
@@ -116,16 +115,10 @@ train_baskets = train_df.groupby(['week', 'customer_id'])[
     'article_id'].count().values
 
 # %%
-columns_to_use = [
-    'article_id',
-    'product_type_no',
-    'perceived_colour_value_id',
-    'perceived_colour_master_id',
-    'department_no',
-    'section_no',
-    'FN',
-    'age',
-    'bestseller_rank']
+columns_to_use = ['article_id', 'product_type_no', 'graphical_appearance_no', 'colour_group_code', 'perceived_colour_value_id',
+'perceived_colour_master_id', 'department_no', 'index_code',
+'index_group_no', 'section_no', 'garment_group_no', 'FN', 'Active',
+'club_member_status', 'fashion_news_frequency', 'age', 'postal_code', 'bestseller_rank']
 
 # %%
 train_X = train_df[columns_to_use]
@@ -140,9 +133,9 @@ train_X.info()
 ranker = LGBMRanker(
     objective="lambdarank",
     metric="ndcg",
-    boosting_type="gbdt",
-    n_estimators=100,
-    learning_rate=0.01,
+    boosting_type="dart",
+    n_estimators=3,
+    learning_rate=0.1,
     importance_type='gain',
     verbose=10
 )
@@ -188,3 +181,6 @@ sub_df.prediction = preds
 logger.info(f'submission shape: {sub_df.shape}')
 logger.info(f'submission sample: \n{sub_df.head()}')
 sub_df.to_csv(OUTPUT_DIR + 'lgbmranker.csv', index=False)
+
+# %%
+eval_sub(sub_csv=OUTPUT_DIR + 'lgbmranker.csv', skip_cust_with_no_purchases=True)
