@@ -1,15 +1,15 @@
-2022-04-24 06:23:07,364 __main__ 2 [INFO][<module>] start
-2022-04-24 06:23:07,608 __main__ 1 [INFO][<module>] load data
-2022-04-24 06:23:08,451 __main__ 5 [INFO][<module>] tran_df shape: (31548013, 6)
-2022-04-24 06:23:08,457 __main__ 6 [INFO][<module>] tran_df head: 
+2022-04-26 05:18:21,814 __main__ 2 [INFO][<module>] start
+2022-04-26 05:18:22,049 __main__ 1 [INFO][<module>] load data
+2022-04-26 05:18:24,284 __main__ 5 [INFO][<module>] tran_df shape: (31548013, 6)
+2022-04-26 05:18:24,290 __main__ 6 [INFO][<module>] tran_df head: 
        t_dat       customer_id  article_id     price  sales_channel_id  week
 0 2018-09-20  1728846800780188   519773001  0.028458                 2     1
 1 2018-09-20  1728846800780188   578472001  0.032525                 2     1
 2 2018-09-20  2076973761519164   661795002  0.167797                 2     1
 3 2018-09-20  2076973761519164   684080003  0.101678                 2     1
 4 2018-09-20  2918879973994241   662980001  0.033881                 1     1
-2022-04-24 06:23:08,458 __main__ 7 [INFO][<module>] arti_df shape: (105542, 25)
-2022-04-24 06:23:08,465 __main__ 8 [INFO][<module>] arti_df head: 
+2022-04-26 05:18:24,291 __main__ 7 [INFO][<module>] arti_df shape: (105542, 25)
+2022-04-26 05:18:24,300 __main__ 8 [INFO][<module>] arti_df head: 
    article_id  product_code  prod_name  product_type_no  product_type_name  \
 0   108775015        108775      12855              253                  9   
 1   108775044        108775      12855              253                  9   
@@ -46,8 +46,8 @@
 4              1017                   4         8243  
 
 [5 rows x 25 columns]
-2022-04-24 06:23:08,466 __main__ 9 [INFO][<module>] cust_df shape: (1371980, 8)
-2022-04-24 06:23:08,470 __main__ 10 [INFO][<module>] cust_df head: 
+2022-04-26 05:18:24,302 __main__ 9 [INFO][<module>] cust_df shape: (1371980, 8)
+2022-04-26 05:18:24,305 __main__ 10 [INFO][<module>] cust_df head: 
             customer_id  FN  Active  club_member_status  \
 0   6883939031699146327  -1      -1                   0   
 1  11246327431398957306  -1      -1                   0   
@@ -61,3 +61,100 @@
 2                       0   24         3247          0  
 3                       0   54       168643          4  
 4                       1   52       168645          0  
+2022-04-26 05:18:43,898 __main__ 2 [INFO][<module>] c2week shape: (444431,)
+2022-04-26 05:18:43,902 __main__ 3 [INFO][<module>] c2week: 
+customer_id
+28847241659200     [95, 96, 97, 102, 103]
+41318098387474                       [99]
+116809474287335                     [102]
+200292573348128    [94, 96, 97, 100, 103]
+208119717816961                      [95]
+Name: week, dtype: object
+2022-04-26 05:18:53,968 __main__ 8 [INFO][<module>] bestseller_previous_week shape: (120, 4)
+2022-04-26 05:18:53,971 __main__ 10 [INFO][<module>] bestseller_previous_week sample: 
+   week  article_id  bestseller_rank     price
+0    95   372860069              1.0  0.005614
+1    95   850244003              2.0  0.004274
+2    95   866383006              3.0  0.024995
+3    95   706016001              4.0  0.033263
+4    95   806388002              5.0  0.013060
+2022-04-26 05:19:30,531 __main__ 16 [INFO][<module>] data info: (18430678, 39)
+2022-04-26 05:19:30,539 __main__ 17 [INFO][<module>] data sample: 
+       t_dat     customer_id  article_id     price  sales_channel_id  week  \
+0 2020-07-14  28847241659200   730683036  0.042356                 1    95   
+1 2020-07-14  28847241659200   851094001  0.011000                 1    95   
+2 2020-07-14  28847241659200   757303012  0.030492                 1    95   
+3 2020-07-14  28847241659200   372860069  0.005614                 1    95   
+4 2020-07-14  28847241659200   850244003  0.004274                 1    95   
+
+   purchased  bestseller_rank  product_code  prod_name  ...  garment_group_no  \
+0        1.0            999.0        730683        103  ...              1005   
+1        1.0            999.0        851094       4663  ...              1005   
+2        1.0            999.0        757303       1314  ...              1005   
+3        0.0              1.0        372860        672  ...              1021   
+4        0.0              2.0        850244       2959  ...              1010   
+
+   garment_group_name  detail_desc  FN  Active  club_member_status  \
+0                   0          178   1       1                   0   
+1                   0         2046   1       1                   0   
+2                   0          896   1       1                   0   
+3                  13          157   1       1                   0   
+4                   6         3747   1       1                   0   
+
+   fashion_news_frequency  postal_code  attribute  age_id  
+0                       1        57896          0       2  
+1                       1        57896          0       2  
+2                       1        57896          0       2  
+3                       1        57896          0       2  
+4                       1        57896          0       2  
+
+[5 rows x 39 columns]
+2022-04-26 05:19:44,834 __main__ 2 [INFO][<module>] bestseller_rank:0.9864534516848031
+2022-04-26 05:19:44,835 __main__ 2 [INFO][<module>] article_id:0.005828621413677122
+2022-04-26 05:19:44,836 __main__ 2 [INFO][<module>] colour_group_code:0.0020067319368996697
+2022-04-26 05:19:44,838 __main__ 2 [INFO][<module>] product_type_no:0.0015005950442279078
+2022-04-26 05:19:44,839 __main__ 2 [INFO][<module>] garment_group_no:0.0008820357968863898
+2022-04-26 05:19:44,839 __main__ 2 [INFO][<module>] department_no:0.0008521239455108698
+2022-04-26 05:19:44,840 __main__ 2 [INFO][<module>] age_id:0.0007245820436039305
+2022-04-26 05:19:44,841 __main__ 2 [INFO][<module>] club_member_status:0.0005892409463949939
+2022-04-26 05:19:44,842 __main__ 2 [INFO][<module>] postal_code:0.0005023721482250307
+2022-04-26 05:19:44,843 __main__ 2 [INFO][<module>] attribute:0.0003984116067754847
+2022-04-26 05:19:44,843 __main__ 2 [INFO][<module>] graphical_appearance_no:0.00014174640077904054
+2022-04-26 05:19:44,844 __main__ 2 [INFO][<module>] fashion_news_frequency:0.00010689957532660977
+2022-04-26 05:19:44,845 __main__ 2 [INFO][<module>] Active:1.3187456889782314e-05
+2022-04-26 05:19:44,845 __main__ 2 [INFO][<module>] index_group_no:0.0
+2022-04-26 05:19:44,846 __main__ 2 [INFO][<module>] index_code:0.0
+2022-04-26 05:19:44,847 __main__ 2 [INFO][<module>] FN:0.0
+2022-04-26 05:19:44,847 __main__ 2 [INFO][<module>] perceived_colour_master_id:0.0
+2022-04-26 05:19:44,848 __main__ 2 [INFO][<module>] perceived_colour_value_id:0.0
+2022-04-26 05:19:44,849 __main__ 2 [INFO][<module>] section_no:0.0
+2022-04-26 05:19:57,333 __main__ 2 [INFO][<module>] sub_df shape: (1371980, 2)
+2022-04-26 05:19:57,335 __main__ 3 [INFO][<module>] sub_df sample: 
+                                         customer_id  \
+0  00000dbacae5abe5e23885899a1fa44253a17956c6d1c3...   
+1  0000423b00ade91418cceaf3b26c6af3dd342b51fd051e...   
+2  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...   
+3  00005ca1c9ed5f5146b52ac8639a40ca9d57aeff4d1bd2...   
+4  00006413d8573cd20ed7128e53b7b13819fe5cfc2d801f...   
+
+                                          prediction  
+0  0706016001 0706016002 0372860001 0610776002 07...  
+1  0706016001 0706016002 0372860001 0610776002 07...  
+2  0706016001 0706016002 0372860001 0610776002 07...  
+3  0706016001 0706016002 0372860001 0610776002 07...  
+4  0706016001 0706016002 0372860001 0610776002 07...  
+2022-04-26 05:19:58,792 __main__ 10 [INFO][<module>] submission shape: (1371980, 2)
+2022-04-26 05:19:58,796 __main__ 11 [INFO][<module>] submission sample: 
+                                         customer_id  \
+0  00000dbacae5abe5e23885899a1fa44253a17956c6d1c3...   
+1  0000423b00ade91418cceaf3b26c6af3dd342b51fd051e...   
+2  000058a12d5b43e67d225668fa1f8d618c13dc232df0ca...   
+3  00005ca1c9ed5f5146b52ac8639a40ca9d57aeff4d1bd2...   
+4  00006413d8573cd20ed7128e53b7b13819fe5cfc2d801f...   
+
+                                          prediction  
+0  0915526001 0751471043 0751471001 0706016001 09...  
+1  0915526001 0751471043 0751471001 0706016001 09...  
+2  0915526001 0751471043 0751471001 0706016001 09...  
+3  0915526001 0751471043 0751471001 0706016001 09...  
+4  0915526001 0751471043 0751471001 0706016001 09...  

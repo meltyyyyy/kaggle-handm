@@ -138,8 +138,8 @@ train_X.info()
 ranker = LGBMRanker(
     objective="lambdarank",
     metric="ndcg",
-    boosting_type="dart",
-    n_estimators=3,
+    boosting_type="goss",
+    n_estimators=2,
     learning_rate=0.1,
     importance_type='gain',
     verbose=10
@@ -189,3 +189,5 @@ sub_df.to_csv(OUTPUT_DIR + 'lgbmranker.csv', index=False)
 
 # %%
 eval_sub(sub_csv=OUTPUT_DIR + 'lgbmranker.csv', skip_cust_with_no_purchases=True)
+
+# %%
