@@ -60,7 +60,7 @@ target_sales = df.drop('customer_id', axis=1).groupby('article_id')['quotient'].
 general_pred = target_sales.nlargest(N).index.tolist()
 
 # %%
-pairs = np.load('../input/hmitempairs/pairs_cudf.npy',allow_pickle=True).item()
+pairs = np.load(INPUT_DIR + 'purchase_pair.npy', allow_pickle=True).item()
 sub = pd.read_feather(INPUT_DIR + 'sample_submission.feather')
 
 pred_list = []
@@ -75,10 +75,12 @@ for cust_id in tqdm(sub['customer_id']):
                 itm = pairs[int(elm)]
                 l.append('0' + str(itm))
         if len(l) < N:
-            l = l + general_pred[:(N-len(l))]
+            l = l + general_pred[:(N - len(l))]
     else:
         l = general_pred
     pred_list.append(' '.join(l))
 
 sub['prediction'] = pred_list
-sub.to_csv(f'submission.csv',index=False)
+sub.to_csv(OUTPUT_DIR + 'byfone_schris.csv', index=False)
+
+# %%

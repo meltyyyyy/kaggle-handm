@@ -120,7 +120,7 @@ train_baskets = train_df.groupby(['week', 'customer_id'])[
     'article_id'].count().values
 
 # %%
-columns_to_use = ['article_id', 'product_type_no', 'graphical_appearance_no', 'colour_group_code', 'perceived_colour_value_id',
+columns_to_use = ['article_id', 'customer_id', 'product_type_no', 'graphical_appearance_no', 'colour_group_code', 'perceived_colour_value_id',
 'perceived_colour_master_id', 'department_no', 'index_code',
 'index_group_no', 'section_no', 'garment_group_no', 'FN', 'Active',
 'club_member_status', 'fashion_news_frequency', 'age_id', 'postal_code', 'bestseller_rank', 'attribute']
